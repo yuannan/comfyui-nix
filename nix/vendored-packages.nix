@@ -88,6 +88,18 @@ rec {
     version = versions.vendored.manager.version;
     url = versions.vendored.manager.url;
     hash = versions.vendored.manager.hash;
+    propagatedBuildInputs = with python.pkgs; [
+      gitpython
+      pygithub
+      transformers
+      huggingface-hub
+      typer
+      rich
+      typing-extensions
+      toml
+      uv
+      chardet
+    ];
   };
 
   comfyKitchen = mkWheel {
