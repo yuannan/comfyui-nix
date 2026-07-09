@@ -927,6 +927,13 @@ lib.optionalAttrs useCuda {
   });
 }
 
+# Disable mss test that requires a real X display (sandbox has no X server)
+// lib.optionalAttrs (prev ? mss) {
+  mss = prev.mss.overridePythonAttrs (old: {
+    disabledTests = (old.disabledTests or [ ]) ++ [ "test_dimensions" ];
+  });
+}
+
 # Disable filterpy tests on Darwin (test_hinfinity triggers BPT trap in pytest)
 // lib.optionalAttrs (prev ? filterpy) {
   filterpy = prev.filterpy.overridePythonAttrs (old: {
