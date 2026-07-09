@@ -388,6 +388,7 @@ lib.optionalAttrs useCuda {
       networkx
       jinja2
       fsspec
+      setuptools
     ];
     # Don't check for ROCm at import time (requires GPU)
     pythonImportsCheck = [ ];
