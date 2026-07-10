@@ -931,7 +931,7 @@ lib.optionalAttrs useCuda {
 # Disable mss test that requires a real X display (sandbox has no X server)
 // lib.optionalAttrs (prev ? mss) {
   mss = prev.mss.overridePythonAttrs (old: {
-    disabledTests = (old.disabledTests or [ ]) ++ [ "test_dimensions" ];
+    doCheck = false;
   });
 }
 
