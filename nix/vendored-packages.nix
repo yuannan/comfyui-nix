@@ -116,7 +116,7 @@ rec {
     hash = versions.vendored.comfyAimdo.hash;
   };
 
-  gradioClient = mkWheel {
+  gradioClient = (mkWheel {
     pname = "gradio-client";
     version = versions.vendored.gradioClient.version;
     url = versions.vendored.gradioClient.url;
@@ -129,7 +129,10 @@ rec {
       typing-extensions
       websockets
     ];
-  };
+  }).overridePythonAttrs (old: {
+    nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ python.pkgs.pythonRelaxDepsHook ];
+    pythonRelaxDeps = [ "websockets" ];
+  });
 
   gradio = mkWheel {
     pname = "gradio";
