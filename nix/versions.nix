@@ -82,15 +82,15 @@
 
     # UI deps some custom nodes expect
     gradio = {
-      version = "5.50.0";
-      url = "https://files.pythonhosted.org/packages/22/04/8daf96bd6d2470f03e2a15a9fc900c7ecf6549619173f16c5944c7ec15a7/gradio-5.50.0-py3-none-any.whl";
-      hash = "sha256-0Gdw1XzdqbcD75z3Z6yTqJCg4S2CZ5oxDu90IDo2c/Q=";
+      version = "5.49.1";
+      url = "https://files.pythonhosted.org/packages/8d/95/1c25fbcabfa201ab79b016c8716a4ac0f846121d4bbfd2136ffb6d87f31e/gradio-5.49.1-py3-none-any.whl";
+      hash = "sha256-Gxk2k4eAGiamun/S901GxbDirJ3e8U8k3cDRH7GUIbc=";
     };
 
     gradioClient = {
-      version = "1.14.0";
-      url = "https://files.pythonhosted.org/packages/be/8a/f2a47134c5b5a7f3bad27eae749589a80d81efaaad8f59af47c136712bf6/gradio_client-1.14.0-py3-none-any.whl";
-      hash = "sha256-mi9RUZeEEeD4tVotOM3dCpRJGFEUnRTbSvlvWgl3SCU=";
+      version = "1.13.3";
+      url = "https://files.pythonhosted.org/packages/6e/0b/337b74504681b5dde39f20d803bb09757f9973ecdc65fd4e819d4b11faf7/gradio_client-1.13.3-py3-none-any.whl";
+      hash = "sha256-P2Pk0zoomcGhKxD+PPd7gqaRn/Gh+2OR9qoiWBGqOQw=";
     };
 
     # Optional attention optimization (used by --use-sage-attention)
