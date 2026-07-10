@@ -185,6 +185,11 @@
         url = "https://download.pytorch.org/whl/rocm7.1/torchaudio-2.10.0%2Brocm7.1-cp312-cp312-manylinux_2_28_x86_64.whl";
         hash = "sha256-pUuMH2HeAbGrlGWJqgFYId0RCTVEcCJJ0gq6VpE8aLs=";
       };
+      triton = {
+        version = "3.6.0";
+        url = "https://download-r2.pytorch.org/whl/triton_rocm-3.6.0-cp312-cp312-linux_x86_64.whl";
+        hash = "sha256-z/FQgnhMcFawr5NHdw4DSrCozLzgZCcj3cjI3hvWrz8=";
+      };
     };
     # Linux x86_64 Intel XPU (oneAPI / SYCL)
     # In-tree PyTorch XPU — no IPEX needed. Targets Arc A/B series and

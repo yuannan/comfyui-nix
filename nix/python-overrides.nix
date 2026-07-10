@@ -356,6 +356,41 @@ lib.optionalAttrs useCuda {
 # ROCm torch from pre-built wheels - avoids 30-60GB RAM compilation
 # The wheels bundle ROCm libraries internally, providing full GPU support
 // lib.optionalAttrs useRocm {
+  triton = final.buildPythonPackage {
+    pname = "triton-rocm";
+    version = rocmWheels.triton.version;
+    format = "wheel";
+    src = pkgs.fetchurl {
+      url = rocmWheels.triton.url;
+      hash = rocmWheels.triton.hash;
+    };
+    dontBuild = true;
+    dontConfigure = true;
+    nativeBuildInputs = [ pkgs.autoPatchelfHook ];
+    buildInputs = wheelBuildInputs ++ rocmLibs;
+    autoPatchelfIgnoreMissingDeps = [
+      "libamdhip64.so.7"
+      "libhsa-runtime64.so.1"
+      "libtorch.so"
+      "libtorch_cpu.so"
+      "libtorch_hip.so"
+      "libtorch_python.so"
+      "libc10.so"
+      "libc10_hip.so"
+    ];
+    propagatedBuildInputs = with final; [ filelock ];
+    pythonImportsCheck = [ ];
+    doCheck = false;
+    dontCheckRuntimeDeps = true;
+
+    meta = {
+      description = "Triton compiler with ROCm/HIP backend (pre-built wheel)";
+      homepage = "https://github.com/ROCm/triton";
+      license = lib.licenses.mit;
+      platforms = [ "x86_64-linux" ];
+    };
+  };
+
   torch = final.buildPythonPackage {
     pname = "torch";
     version = rocmWheels.torch.version;
