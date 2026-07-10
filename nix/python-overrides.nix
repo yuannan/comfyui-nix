@@ -424,6 +424,7 @@ lib.optionalAttrs useCuda {
       jinja2
       fsspec
       setuptools
+      triton
     ];
     # Don't check for ROCm at import time (requires GPU)
     pythonImportsCheck = [ ];
