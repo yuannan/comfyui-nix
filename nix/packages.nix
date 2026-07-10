@@ -258,20 +258,20 @@ let
       pkgs.glib
       pkgs.libGL
       # X11 / XCB runtime libs (fixes: libxcb.so.1 not found)
-      pkgs.xorg.libxcb
-      pkgs.xorg.libX11
-      pkgs.xorg.libXext
-      pkgs.xorg.libXrender
-      pkgs.xorg.libXfixes
-      pkgs.xorg.libXi
-      pkgs.xorg.libXrandr
-      pkgs.xorg.libXcursor
-      pkgs.xorg.libXcomposite
-      pkgs.xorg.libXdamage
-      pkgs.xorg.libXau
-      pkgs.xorg.libXdmcp
-      pkgs.xorg.libSM
-      pkgs.xorg.libICE
+      pkgs.libxcb
+      pkgs.libX11
+      pkgs.libXext
+      pkgs.libXrender
+      pkgs.libXfixes
+      pkgs.libXi
+      pkgs.libXrandr
+      pkgs.libXcursor
+      pkgs.libXcomposite
+      pkgs.libXdamage
+      pkgs.libXau
+      pkgs.libXdmcp
+      pkgs.libSM
+      pkgs.libICE
       pkgs.libxkbcommon
     ]
     # XPU runtime libs (Level Zero, Intel compute-runtime, OpenCL ICD) — fallback
